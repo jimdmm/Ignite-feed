@@ -1,4 +1,4 @@
-import { Avatar } from '../Avatar.jsx';
+import { Avatar } from './Avatar.jsx';
 import { Comment } from './Comment.jsx';
 import styles from './Post.module.css';
 
