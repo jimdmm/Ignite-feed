@@ -1,19 +1,19 @@
-import { Header } from "./Components/Header.jsx"
-import { Post } from "./Components/Post.jsx"
-import { Sidebar } from "./Components/Sidebar.jsx";
+import { Header } from "./Components/Header.tsx"
+import { Post, IPost } from "./Components/Post.tsx"
+import { Sidebar } from "./Components/Sidebar.tsx";
 
 import styles from './App.module.css';
 import './global.css'
 
 function App() {
 
-  const posts = [
+  const posts: IPost[] = [
     {
       id: 1,
       author: { 
-        imgUrl: 'https://avatars.githubusercontent.com/u/94024972?v=4', 
         name: 'Jim Douglas', 
-        role: 'Backend Developer'
+        role: 'Backend Developer',
+        avatarUrl: 'https://avatars.githubusercontent.com/u/94024972?v=4'
       },
       content: [
         {id:'101', type: 'paragraph', content:'Fala galeraa 👋'},
@@ -28,21 +28,19 @@ function App() {
     <>
       <Header />
 
-      <div className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <Sidebar />
         <main>
           {posts.map(post => {
             return (
               <Post 
                 key={post.id}
-                author={post.author}
-                publishedAt={post.publishedAt}
-                content={post.content}
+                post={post}
               />
            )
           })}
         </main>
-      </div>
+      </section>
     </>
   )
 }

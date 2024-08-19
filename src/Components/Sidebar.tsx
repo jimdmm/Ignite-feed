@@ -1,6 +1,6 @@
-import { PencilLine } from 'phosphor-react'
+import { PencilLine } from 'phosphor-react';
 import styles from './Sidebar.module.css';
-import { Avatar } from './Avatar';
+import { Avatar } from './Avatar.tsx';
 
 export const Sidebar = () => {
   return (
